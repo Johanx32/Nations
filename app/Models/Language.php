@@ -20,6 +20,7 @@ class Language extends Model
         return $this->belongsToMany(Country::class,
                               'country_languages',
                               'language_id',
-                              'country_id');
+                              'country_id')->
+                              withPivot('official');
     }
 }
